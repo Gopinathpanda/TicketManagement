@@ -1,0 +1,13 @@
+*{
+
+margin:0;
+padding:0;
+}
+.navbar{
+background:rgb(113, 11, 207);
+}
+
+.navbar-nav{
+margin-left:900px;
+font-size:small;
+}

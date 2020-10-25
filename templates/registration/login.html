@@ -1,0 +1,47 @@
+{% extends 'base.html'%}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<script src="https://kit.fontawesome.com/e9fa1254e6.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<div class="container">
+
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+
+      <div class="col-xl-10 col-lg-12 col-md-9">
+
+        <div class="card o-hidden border-10 border-primary rounded-lg shadow-lg my-5">
+          <div class="card-body p-1">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+              <div class="col-lg-6 d-none d-lg-block">
+                  <h5>Already a member?</h5>
+                  <p>Sign In</p>
+                <form method="POST">
+                      {% csrf_token %}
+                      {{ form | crispy }}
+                      <button type="submit" class="btn btn-success">Login</button>
+                  </form>
+              </div>
+              <div class="col-lg-6">
+                <div class="p-5">
+                     <div class="media-body">
+                         <a href="{% url 'register' %}"><h5> <i class="fas fa-user"></i>New User? Sign Up</h5>
+                        <p>Create an account to submit tickets, read articles and engage in our community.</p>
+                         </a>
+                     </div>
+                    </div>
+                  <br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+{% endblock content %}
